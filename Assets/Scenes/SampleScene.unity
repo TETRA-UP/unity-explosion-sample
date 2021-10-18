@@ -456,10 +456,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52eb072173ca948d6a024c2a82f42e2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_particle: {fileID: 0}
-  m_force: 40
-  m_radius: 5
-  m_upwards: 10
+  particle: {fileID: 1768932090}
+  force: 20
+  radius: 5
+  upwards: 0
 --- !u!4 &1175180194
 Transform:
   m_ObjectHideFlags: 0
@@ -487,12 +487,12 @@ GameObject:
   - component: {fileID: 1768932090}
   - component: {fileID: 1768932089}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: Explosion Particle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1768932088
 Transform:
   m_ObjectHideFlags: 0
@@ -587,7 +587,7 @@ ParticleSystem:
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -5386,10 +5386,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52eb072173ca948d6a024c2a82f42e2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_particle: {fileID: 0}
-  m_force: 20
-  m_radius: 5
-  m_upwards: 0
+  particle: {fileID: 0}
+  force: 20
+  radius: 5
+  upwards: 0
 --- !u!65 &1990077969
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5478,8 +5478,8 @@ GameObject:
   - component: {fileID: 1996348373}
   - component: {fileID: 1996348372}
   - component: {fileID: 1996348371}
-  - component: {fileID: 1996348376}
   - component: {fileID: 1996348375}
+  - component: {fileID: 1996348376}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -5586,12 +5586,8 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1996348370}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52eb072173ca948d6a024c2a82f42e2c, type: 3}
+  m_Script: {fileID: 11500000, guid: 04cc09a7452f040729490ac7f0d9dd61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_particle: {fileID: 0}
-  m_force: 20
-  m_radius: 5
-  m_upwards: 0
