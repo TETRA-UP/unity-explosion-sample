@@ -32,12 +32,11 @@ public class ExplosionController : MonoBehaviour
         particle.Play();
         position = particle.transform.position;
 
-        // 範囲内のRigidbodyにAddExplosionForce
+        // 設定した座標＝Positionから見た範囲＝Radius内の個数を取得
+        // RigidbodyにAddExplosionForce
         Collider[] hitColliders = Physics.OverlapSphere(position, radius);
         for (int i = 0; i < hitColliders.Length; i++)
         {
-            Debug.Log(hitColliders);
-            Debug.Log(hitColliders[i]);
             var rb = hitColliders[i].GetComponent<Rigidbody>();
             if (rb == true)
             {

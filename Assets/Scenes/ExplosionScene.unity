@@ -167,7 +167,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1494045343575114200, guid: db5982ecef6f54613b603fc6aff3c5cf, type: 3}
-  target: {fileID: 269569489}
   generatedTime: 2
 --- !u!1 &513656697
 GameObject:
@@ -369,7 +368,7 @@ GameObject:
   m_Component:
   - component: {fileID: 944613098}
   m_Layer: 0
-  m_Name: point
+  m_Name: shotPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -580,8 +579,8 @@ GameObject:
   - component: {fileID: 1807090314}
   - component: {fileID: 1807090313}
   - component: {fileID: 1807090312}
-  - component: {fileID: 1807090311}
   - component: {fileID: 1807090316}
+  - component: {fileID: 1807090311}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -602,7 +601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   z: 0
-  point: {fileID: 944613097}
+  shotPoint: {fileID: 944613097}
   bulletPrefab: {fileID: 5776642696495463421, guid: cc56405d657b841718cca0ac4e41f892, type: 3}
   shotPower: 1000
 --- !u!135 &1807090312
@@ -675,7 +674,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1807090310}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10, y: 5, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 963194228}

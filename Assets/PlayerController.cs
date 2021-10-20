@@ -5,11 +5,14 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     //Inspectorから見やすくするためPublic
+    //動き
     public float z;
 
-
-    public GameObject point;
+    //Canonの先っぽのところの座標を取得するため
+    public GameObject shotPoint;
+    //弾のPrefab
     public GameObject bulletPrefab;
+    //弾の発射威力
     public float shotPower;
 
     // Start is called before the first frame update
@@ -38,9 +41,11 @@ public class PlayerController : MonoBehaviour
 
         //Positionを変更
         gameObject.transform.position += gameObject.transform.rotation * new Vector3(0, 0, z);
-        //こっちの方が見やすい
-        //Vector3 velocity = gameObject.transform.rotation * new Vector3(0, 0, z);
-        //gameObject.transform.position += velocity * Time.deltaTime;
+
+        //Positionを変更
+        //こっちの方が見やすいかも？
+        //Vector3 rotation = gameObject.transform.rotation * new Vector3(0, 0, z);
+        //gameObject.transform.position += rotation * Time.deltaTime;
 
         //向きを変える
         if (Input.GetKey(KeyCode.LeftArrow))
@@ -53,6 +58,7 @@ public class PlayerController : MonoBehaviour
             transform.Rotate(0f, 3f, 0f);
         }
 
+        //発射
         if(Input.GetKeyDown(KeyCode.Space))
         {
             Shot();
@@ -63,7 +69,9 @@ public class PlayerController : MonoBehaviour
     void Shot()
     {
         GameObject bullet = Instantiate(bulletPrefab);
-        bullet.transform.position = point.transform.position;
+        //Canonの先っぽのところを初期位置にする
+        bullet.transform.position = shotPoint.transform.position;
+        //発射
         bullet.GetComponent<Rigidbody>().AddForce(transform.forward * shotPower);
     }
 }
