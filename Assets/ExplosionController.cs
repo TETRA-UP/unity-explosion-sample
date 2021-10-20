@@ -4,12 +4,21 @@ using UnityEngine;
 
 public class ExplosionController : MonoBehaviour
 {
-    [SerializeField] ParticleSystem particle;
-    [SerializeField] float force = 20;
-    [SerializeField] float radius = 5;
-    [SerializeField] float upwards = 0;
+    public static ExplosionController instance;
+    public ParticleSystem particle;
+    public float force = 20;
+    public float radius = 5;
+    public float upwards = 0;
     Vector3 position;
 
+    private void Awake()
+    {
+        instance = this;
+    }
+    private void Start()
+    {
+        particle.gameObject.SetActive(false);
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Return))
@@ -17,7 +26,6 @@ public class ExplosionController : MonoBehaviour
             Explosion();
         }
     }
-
     public void Explosion()
     {
         particle.gameObject.SetActive(true);
@@ -28,10 +36,14 @@ public class ExplosionController : MonoBehaviour
         Collider[] hitColliders = Physics.OverlapSphere(position, radius);
         for (int i = 0; i < hitColliders.Length; i++)
         {
+            Debug.Log(hitColliders);
+            Debug.Log(hitColliders[i]);
             var rb = hitColliders[i].GetComponent<Rigidbody>();
-            if (rb)
+            if (rb == true)
             {
+                //力、座標、半径、上への向き
                 rb.AddExplosionForce(force, position, radius, upwards, ForceMode.Impulse);
+                
             }
         }
     }
