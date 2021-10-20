@@ -3,8 +3,11 @@
 Unity3D
 Version2020.2.1f1
 
-## Localへの入れ方
-Unityで3Dの新規プロジェクト作成
+### ①追加したいディレクトリで
+```
+git clone https://github.com/TETRA-UP/unity-explosion-sample.git
+```
 
-作成したプロジェクト直下で
-git clone 
+### ②Unity Hubからリストに追加
+
+### ③ExplosionSceneを開く
